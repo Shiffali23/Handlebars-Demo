@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<title>User Input</title>
+		<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
+		<script src ="Submit.js"></script>
+	</head>
+	
+	 Name : <input type = "text" name = "firstName"/><br/>
+	 Technology : <input type = "text" name = "technology"/><br/>
+	 Company : <input type = "text" name = "company"/><br/>
+	 <input class = "add-data" type = "submit" value= "Submit"><br/>
+	 
+	 <br/><br/>
+	 <div id = "add-html"></div>
+	 
+	<script id="template-output" type="text/x-handlebars-template">
+		<h2>
+			Hiii!!!!!
+		</h2>
+		{{greetings firstName}}<br/>
+		<span> Your Name is {{firstName}} </span><br/>
+		<span> Your Tech is {{technology}}</span><br/>
+		<span>You Work for {{company}}</span><br/>
+		<span></span>
+	</script>
+</html>
