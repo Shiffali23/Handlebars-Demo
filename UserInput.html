@@ -1,27 +1,48 @@
 <html>
 	<head>
 		<title>User Input</title>
+		<link rel="stylesheet" href="style.css">
 		<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
 		<script src ="Submit.js"></script>
 	</head>
+	<style>
+
+	</style>
+	<div class ="main">
+		<div class = "left">
+			<div class = "lable-title">Monthly Expenses : </div><input type = "text" name = "description" placeholder = "Description"/>
+			<input type = "text" name = "amount" placeholder = "Amount Spent"/>
+			<input class = "add-data" type = "submit" value= "Submit">	 
+			<br/><br/>
+			<h2>
+				Monthly Expenses Calculation
+			</h2>
+			<div id = "add-html"></div>
+		</div>
+		<div class = "right">
+			<div class = "lable-title">Total Monthly Income : </div><input type = "text" name = "totalIncome"/>
+			<input class = "add-income" type = "submit" value= "Submit">	 
+			<br/><br/>
+			<div id = "add-income"></div>
+			<div id = "left-amount"></div>
+		</div>	
+	</div>
 	
-	 Name : <input type = "text" name = "firstName"/><br/>
-	 Technology : <input type = "text" name = "technology"/><br/>
-	 Company : <input type = "text" name = "company"/><br/>
-	 <input class = "add-data" type = "submit" value= "Submit"><br/>
-	 
-	 <br/><br/>
-	 <div id = "add-html"></div>
-	 
-	<script id="template-output" type="text/x-handlebars-template">
-		<h2>
-			Hiii!!!!!
-		</h2>
-		{{greetings firstName}}<br/>
-		<span> Your Name is {{firstName}} </span><br/>
-		<span> Your Tech is {{technology}}</span><br/>
-		<span>You Work for {{company}}</span><br/>
-		<span></span>
+	<script id="basic-template" type="text/x-handlebars-template">
+		<div class = "outer-box">
+			{{#if income}}
+			<div class = "title">Monthly Income : </div>{{ totalIncome}}<br/>
+			{{else}}
+			<div class = "title">Amount Left : </div>{{balance amount}}
+			{{/if}}
+		</div>
+	</script>
+	
+	<script id="expenses-template" type="text/x-handlebars-template">
+		<div class="monthly-expenses">
+			<span class="description"> Description: {{description}} </span><br/>
+			<span class="description"> Amount Spent: {{amount}}</span><br/>
+		</div><br/><br/>
 	</script>
 </html>
